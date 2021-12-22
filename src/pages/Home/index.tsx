@@ -1,7 +1,18 @@
 import * as React from 'react';
-import { IHome, texts } from './data';
+import { useQuery } from 'react-query';
+
+import { getProducts } from '~/utils';
+
+import { IHome } from './data';
 import { Home as Layout } from './Layout';
 
 export const Home: React.FC<IHome> = props => {
-  return <Layout {...props} data={texts} />;
+  const { data: products } = useQuery('getProducts', getProducts);
+
+  const layoutProps = {
+    ...props,
+    products,
+  };
+
+  return <Layout {...layoutProps} />;
 };
