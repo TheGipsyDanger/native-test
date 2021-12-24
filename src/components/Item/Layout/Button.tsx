@@ -12,7 +12,9 @@ export const Button = ({ title }: IItemButton) => (
       borderRadius="Circle"
       center
       testID={`ItemButton`}>
-      <Text>{title}</Text>
+      <Text color="WHITE" font="medium">
+        {title}
+      </Text>
     </Wrapped>
   </Wrapped>
 );

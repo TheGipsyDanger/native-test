@@ -8,15 +8,10 @@ import { IItemLayout } from '~/components/Item/data';
 
 export const Item = (props: IItemLayout) => {
   const { type = 'grid' } = props;
-
   return (
-    <>
-      <Conditional render={type === 'grid'}>
-        <Grid {...props} />
-      </Conditional>
-      <Conditional render={type === 'list'}>
-        <Line {...props} />
-      </Conditional>
-    </>
+    <Conditional render={type === 'grid'}>
+      <Grid {...props} />
+      <Line {...props} />
+    </Conditional>
   );
 };

@@ -22,7 +22,6 @@ export const Input = ({
     <S.Input
       {...props}
       ref={forwardRef}
-      placeholderTextColor="#221E1E"
       font={font}
       autoFocus={autoFocus}
       color={color}
