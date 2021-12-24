@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { IStringMap } from '~/utils';
+import { BasketIcon } from '~/components';
 import * as views from '../pages';
 
 const Stack = createStackNavigator();
@@ -13,6 +13,7 @@ const allViews: { [key: string]: any } = {
 const viewNames: IStringMap = {
   Home: 'Produtos',
   Details: 'Detalhes',
+  Basket: 'Carrinho',
 };
 
 function defineRoutesProps(name: string) {
@@ -22,13 +23,7 @@ function defineRoutesProps(name: string) {
       headerShown: true,
       title: viewNames[name],
       headerBackTitleVisible: false,
-      // headerRight: () => (
-      //   <Button
-      //     onPress={() => alert('This is a button!')}
-      //     title="Info"
-      //     color="#f37321 "
-      //   />
-      // ),
+      headerRight: () => name === 'Home' && <BasketIcon />,
     },
     component: allViews[name],
   };
