@@ -5,3 +5,4 @@ export { Linear } from './Linear';
 export { Icon } from './Icon';
 export { Image } from './Image';
 export { Conditional } from './Conditional';
+export { Input } from './Input';
