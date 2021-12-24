@@ -1,4 +1,4 @@
-import { withChildren } from '~/utils';
+import { withChildren, IFont, IFontSize } from '~/utils';
 
 import {
   SpaceProps,
@@ -24,6 +24,8 @@ export interface IInput
     SpaceProps,
     TypographyProps {
   testID?: string;
+  font?: IFont;
+  size?: IFontSize;
   forwardRef: any;
   onChange: any;
   handleValue: any;

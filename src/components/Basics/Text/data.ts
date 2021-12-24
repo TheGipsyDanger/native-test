@@ -1,3 +1,5 @@
+import { IFont, IFontSize } from '~/utils';
+
 import {
   BorderProps,
   ColorProps,
@@ -7,18 +9,7 @@ import {
   FontStyleProps,
   SpaceProps,
   TypographyProps,
-} from "styled-system";
-
-export type IFont = "Regular" | "Light" | "Medium" | "Bold" | "Black";
-
-export type IFontSize =
-  | "tiny"
-  | "xsmall"
-  | "small"
-  | "default"
-  | "big"
-  | "large"
-  | "xlarge";
+} from 'styled-system';
 export interface IText
   extends BorderProps,
     ColorProps,
