@@ -1,5 +1,10 @@
-export interface ISubHeader {
-  data?: any;
-}
+import { ListViewType } from '~/utils';
 
-export interface ISubHeaderLayout extends ISubHeader {}
+export interface ISubHeader {}
+
+export interface ISubHeaderLayout extends ISubHeader {
+  search: string;
+  onChange(value: string): void;
+  listType: ListViewType;
+  setListType(value: ListViewType): void;
+}
