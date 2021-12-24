@@ -4,7 +4,7 @@ import C from './styles';
 
 export const Text: React.FC<ITextLayout> = ({
   color = 'TEXT',
-  font = 'Regular',
+  font = 'regular',
   size = 'small',
   ...props
 }) => (

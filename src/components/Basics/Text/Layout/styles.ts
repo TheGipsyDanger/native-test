@@ -24,7 +24,7 @@ export default {
       `}
 
     font-size: ${({ size }) => fontSizes[size || 'xsmall']};
-    font-family: ${({ font }) => fonts[font as string] || 'regular'};
+    font-family: ${({ font }) => fonts[font as string] || 'Regular'};
     color: ${({ color }) => colors[color as string]};
   `,
 };
