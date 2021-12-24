@@ -6,6 +6,11 @@ import { ISubHeaderLayout } from '~/components/SubHeader/data';
 
 import C from './styles';
 
+const iconProps = {
+  lib: 'Feather',
+  size: 24,
+};
+
 export const SubHeader = ({
   search,
   onChange,
@@ -27,12 +32,20 @@ export const SubHeader = ({
       <C.IconsArea>
         <Wrapped onPress={() => setListType('grid')}>
           <C.IconWrapped>
-            <Icon name="grid" lib="Feather" size={24} />
+            <Icon
+              name="grid"
+              {...iconProps}
+              color={listType === 'grid' ? 'ORANGE' : 'TEXT'}
+            />
           </C.IconWrapped>
         </Wrapped>
         <Wrapped onPress={() => setListType('list')}>
           <C.IconWrapped>
-            <Icon name="list" lib="Feather" size={24} />
+            <Icon
+              name="list"
+              {...iconProps}
+              color={listType === 'list' ? 'ORANGE' : 'TEXT'}
+            />
           </C.IconWrapped>
         </Wrapped>
       </C.IconsArea>

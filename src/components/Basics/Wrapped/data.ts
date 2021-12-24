@@ -1,25 +1,6 @@
-import {
-  BorderProps,
-  BoxShadowProps,
-  ColorProps,
-  FlexboxProps,
-  SpaceProps,
-  TypographyProps,
-  BackgroundColorProps,
-  LayoutProps,
-  PositionProps,
-} from 'styled-system';
+import { IWrappedProps } from '~/utils';
 
-export interface IWrapped
-  extends BorderProps,
-    PositionProps,
-    BoxShadowProps,
-    ColorProps,
-    FlexboxProps,
-    SpaceProps,
-    TypographyProps,
-    BackgroundColorProps,
-    LayoutProps {
+export interface IWrapped extends IWrappedProps {
   testID?: string;
   center?: boolean;
   onPress?(): void;

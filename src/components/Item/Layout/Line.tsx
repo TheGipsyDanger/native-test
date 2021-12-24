@@ -1,33 +1,33 @@
 import * as React from 'react';
 
 import { Wrapped, Image, Text } from '~/components/Basics';
-import { Button } from './Button';
+import { Button } from '~/components/Button';
 import { metrics } from '~/styles';
+import { BRLMoney } from '~/utils';
 
 import { IItemLayout } from '~/components/Item/data';
 
+import C from './styles';
+
 export const Line = ({ image, price, title }: IItemLayout) => (
-  <Wrapped p={1} testID={`Item`} height={metrics.windownWidth / 2}>
-    <Wrapped
-      px={2}
-      py={1}
-      flex={1}
-      bg="white"
-      boxShadow="cell"
-      flexDirection="row">
+  <C.Container testID={`Item`} height={metrics.windownWidth / 2}>
+    <C.Card px={2} py={1} flexDirection="row">
       <Image flex={1} uri={image} />
       <Wrapped flex={2} pl={2} py={2} justifyContent="center">
-        <Text size="tiny" mb={0}>
-          {title}
-        </Text>
+        <C.Title>{title}</C.Title>
         <Text size="small" font="bold" mb={2}>
-          {price.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-          })}
+          {BRLMoney(price)}
         </Text>
-        <Button title={'Adicionar'} />
+        <Button
+          py={0}
+          bg="YELLOW"
+          font="medium"
+          fontSize="xsmall"
+          textColor="TEXT"
+          onPress={() => alert('press')}
+          title="Adicionar"
+        />
       </Wrapped>
-    </Wrapped>
-  </Wrapped>
+    </C.Card>
+  </C.Container>
 );

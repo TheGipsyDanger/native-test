@@ -5,7 +5,11 @@ import { Wrapped, Item, SubHeader, Conditional } from '~/components';
 
 import { IHomeLayout } from '../data';
 
-export const Home: React.FC<IHomeLayout> = ({ products, listType }) => (
+export const Home: React.FC<IHomeLayout> = ({
+  products,
+  listType,
+  openDetails,
+}) => (
   <Wrapped flex={1} bg="WHITE">
     <SubHeader />
     <Conditional render={listType === 'grid'}>
@@ -15,14 +19,22 @@ export const Home: React.FC<IHomeLayout> = ({ products, listType }) => (
         numColumns={2}
         showsVerticalScrollIndicator={false}
         keyExtractor={(_, index) => index.toString()}
-        renderItem={({ item }) => <Item {...item} type="grid" />}
+        renderItem={({ item }) => (
+          <Wrapped onPress={() => openDetails(item)}>
+            <Item {...item} type="grid" />
+          </Wrapped>
+        )}
       />
       <FlatList
         data={products}
         extraData={products}
         showsVerticalScrollIndicator={false}
         keyExtractor={(_, index) => index.toString()}
-        renderItem={({ item }) => <Item {...item} type="list" />}
+        renderItem={({ item }) => (
+          <Wrapped onPress={() => openDetails(item)}>
+            <Item {...item} type="list" />
+          </Wrapped>
+        )}
       />
     </Conditional>
   </Wrapped>

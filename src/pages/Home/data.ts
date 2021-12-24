@@ -5,4 +5,5 @@ export interface IHome {}
 export interface IHomeLayout extends IHome {
   products: IProduct[];
   listType: ListViewType;
+  openDetails(item: IProduct): void;
 }

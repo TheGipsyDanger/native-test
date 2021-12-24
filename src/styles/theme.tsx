@@ -35,7 +35,9 @@ export const fontSizes: IStringMap = {
 export const colors: IStringMap = {
   WHITE: '#FFF',
   ORANGE: '#f37321',
+  YELLOW: '#FFD814',
   TEXT: '#171717',
+  SUBTEXT: '#007185',
   SUBLABEL: '#777777',
   LINE: '#CDCDCD',
 };
