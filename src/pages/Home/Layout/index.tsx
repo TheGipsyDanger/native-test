@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { FlatList } from 'react-native';
 
-import { Wrapped, Item } from '~/components';
+import { Wrapped, Item, SubHeader } from '~/components';
 
 import { IHomeLayout } from '../data';
 
 export const Home: React.FC<IHomeLayout> = ({ products, listType }) => (
   <Wrapped flex={1} bg="WHITE">
+    <SubHeader />
     <FlatList
       data={products}
       extraData={products}
