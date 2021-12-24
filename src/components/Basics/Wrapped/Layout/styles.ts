@@ -25,6 +25,7 @@ export default {
     ${({ boxShadow: shadow }) =>
       shadow &&
       css`
+        box-shadow: ${theme.shadows[shadow as string]};
         elevation: 5;
       `}
 

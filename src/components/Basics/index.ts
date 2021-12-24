@@ -3,4 +3,5 @@ export { Wrapped } from './Wrapped';
 export { Text } from './Text';
 export { Linear } from './Linear';
 export { Icon } from './Icon';
+export { Image } from './Image';
 export { Conditional } from './Conditional';

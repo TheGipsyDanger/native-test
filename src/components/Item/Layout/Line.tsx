@@ -6,6 +6,6 @@ import { IItemLayout } from '~/components/Item/data';
 
 export const Line = ({}: IItemLayout) => (
   <Wrapped testID={`Item`}>
-    <Text color="ORANGE">{`Item`}</Text>
+    <Text color="ORANGE">{`Item Line`}</Text>
   </Wrapped>
 );

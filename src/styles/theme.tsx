@@ -56,6 +56,7 @@ export const theme = {
   fontSizes,
   colors,
   radii,
+  shadows,
 };
 
 export const ThemeProvider: React.FC = ({ children }) => (
