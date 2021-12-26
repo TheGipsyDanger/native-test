@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FlatList, TextPropTypes } from 'react-native';
+import { FlatList } from 'react-native';
 
 import { Wrapped, Item, SubHeader, Conditional } from '~/components';
 
