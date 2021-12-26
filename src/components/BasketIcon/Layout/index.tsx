@@ -12,7 +12,7 @@ export const BasketIcon = ({
   goToBasket,
 }: IBasketIconLayout) => (
   <>
-    <Conditional render={route === 'Home'}>
+    <Conditional render={['Home', 'Details'].includes(route)}>
       <Wrapped testID={`BasketIcon`} height={30} center mr={1}>
         <Wrapped onPress={goToBasket} flexDirection="row">
           <Text mr={0}>{count === 0 ? '' : count > 9 ? '+9' : count}</Text>

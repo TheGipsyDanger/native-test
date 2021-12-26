@@ -10,7 +10,7 @@ import { IItemLayout } from '~/components/Item/data';
 import C from './styles';
 
 export const Grid = (props: IItemLayout) => {
-  const { item, addItemOnBasket } = props;
+  const { item, addItem } = props;
   const { image, price, title } = item;
 
   return (
@@ -31,7 +31,7 @@ export const Grid = (props: IItemLayout) => {
             font="medium"
             fontSize="xsmall"
             textColor="TEXT"
-            onPress={() => addItemOnBasket(item)}
+            onPress={() => addItem(item)}
             title="Adicionar"
           />
         </Wrapped>

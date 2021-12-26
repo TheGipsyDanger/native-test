@@ -10,7 +10,7 @@ import { IItemLayout } from '~/components/Item/data';
 import C from './styles';
 
 export const Line = (props: IItemLayout) => {
-  const { item, addItemOnBasket } = props;
+  const { item, addItem } = props;
   const { image, price, title } = item;
 
   return (
@@ -28,7 +28,7 @@ export const Line = (props: IItemLayout) => {
             font="medium"
             fontSize="xsmall"
             textColor="TEXT"
-            onPress={() => addItemOnBasket(item)}
+            onPress={() => addItem(item)}
             title="Adicionar"
           />
         </Wrapped>
