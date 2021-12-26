@@ -1,14 +1,16 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { createContext, useContext } from 'react';
-import { IBasketContext, IProduct } from '~/utils';
+import { IBasketContext, IBasketProduct } from '~/utils';
 
 export const BasketContext = createContext<IBasketContext>(
   {} as IBasketContext
 );
 
 export const BasketProvider: React.FC = ({ children }) => {
-  const [basket, setBasket] = useState<IProduct[]>([] as IProduct[]);
+  const [basket, setBasket] = useState<IBasketProduct[]>(
+    [] as IBasketProduct[]
+  );
 
   return (
     <BasketContext.Provider value={{ basket, setBasket }}>

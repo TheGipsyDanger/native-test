@@ -12,3 +12,7 @@ export interface IRating {
   count: number;
   rate: number;
 }
+
+export interface IBasketProduct extends IProduct {
+  qtd: number;
+}

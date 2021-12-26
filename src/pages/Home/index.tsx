@@ -3,16 +3,18 @@ import { useQuery } from 'react-query';
 import { useNavigation } from '@react-navigation/native';
 import escapeRegExp from 'escape-string-regexp';
 
-import { getProducts, IProduct } from '~/utils';
-import { useList, useItem } from '~/context';
+import { IProduct, getProducts, createBasketFactory } from '~/utils';
+import { useList, useItem, useBasket } from '~/context';
 
 import { IHome } from './data';
 import { Home as Layout } from './Layout';
 
 export const Home: React.FC<IHome> = props => {
+  const Basket = createBasketFactory();
   const navigation = useNavigation();
 
   const { search, listType } = useList();
+  const { basket, setBasket } = useBasket();
   const { setSelected } = useItem();
 
   const { data: products } = useQuery<IProduct[]>('getProducts', getProducts);
@@ -28,10 +30,16 @@ export const Home: React.FC<IHome> = props => {
     navigation.navigate('Details');
   }
 
+  function addItemOnBasket(product: IProduct) {
+    const basketValues = Basket.addItem(basket, product);
+    setBasket(basketValues);
+  }
+
   const layoutProps = {
     ...props,
     listType,
     openDetails,
+    addItemOnBasket,
     products: productsSearch(),
   };
 

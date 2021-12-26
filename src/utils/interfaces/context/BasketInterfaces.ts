@@ -1,6 +1,6 @@
-import { IProduct } from '~/utils';
+import { IProduct, IBasketProduct } from '~/utils';
 
 export interface IBasketContext {
-  basket: IProduct[];
-  setBasket(products: IProduct[]): void;
+  basket: IBasketProduct[];
+  setBasket(products: IBasketProduct[]): void;
 }

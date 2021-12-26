@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, TextPropTypes } from 'react-native';
 
 import { Wrapped, Item, SubHeader, Conditional } from '~/components';
 
@@ -9,6 +9,7 @@ export const Home: React.FC<IHomeLayout> = ({
   products,
   listType,
   openDetails,
+  ...props
 }) => (
   <Wrapped flex={1} bg="WHITE">
     <SubHeader />
@@ -21,7 +22,7 @@ export const Home: React.FC<IHomeLayout> = ({
         keyExtractor={(_, index) => index.toString()}
         renderItem={({ item }) => (
           <Wrapped onPress={() => openDetails(item)}>
-            <Item {...item} type="grid" />
+            <Item {...{ item, type: 'grid', ...props }} />
           </Wrapped>
         )}
       />
@@ -32,7 +33,7 @@ export const Home: React.FC<IHomeLayout> = ({
         keyExtractor={(_, index) => index.toString()}
         renderItem={({ item }) => (
           <Wrapped onPress={() => openDetails(item)}>
-            <Item {...item} type="list" />
+            <Item {...{ item, type: 'grid', ...props }} />
           </Wrapped>
         )}
       />
