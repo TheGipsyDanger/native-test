@@ -33,7 +33,7 @@ export const Home: React.FC<IHomeLayout> = ({
         keyExtractor={(_, index) => index.toString()}
         renderItem={({ item }) => (
           <Wrapped onPress={() => openDetails(item)}>
-            <Item {...{ item, type: 'grid', ...props }} />
+            <Item {...{ item, type: 'list', ...props }} />
           </Wrapped>
         )}
       />
