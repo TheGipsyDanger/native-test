@@ -1,9 +1,33 @@
-import styled from 'styled-components/native'
+import styled from 'styled-components/native';
+import { Wrapped, Text } from '~/components';
 
 export default {
-  Text: styled.Text`
-    font-size: 18px;
-    color: #f37321;
-    font-weight: bold;
-  `
-}
+  Container: styled(Wrapped).attrs({
+    flex: 1,
+    bg: 'white',
+  })``,
+  Card: styled(Wrapped).attrs({
+    flex: 1,
+    px: 2,
+    py: 1,
+    bg: 'white',
+    boxShadow: 'cell',
+    flexDirection: 'row',
+  })``,
+  Title: styled(Text).attrs({
+    size: 'xsmall',
+    numberOfLines: 1,
+  })``,
+  InfosText: styled(Text).attrs({
+    size: 'tiny',
+  })``,
+  InfosRow: styled(Wrapped).attrs({
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  })``,
+  Infos: styled(Wrapped).attrs({
+    flex: 2,
+    bg: 'white',
+    justifyContent: 'center',
+  })``,
+};

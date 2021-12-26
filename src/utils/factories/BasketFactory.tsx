@@ -2,6 +2,7 @@ import { IBasketProduct, IProduct } from '~/utils';
 
 interface IBasketFactory {
   addItem(products: IBasketProduct[], product: IProduct): IBasketProduct[];
+  removeItem(products: IBasketProduct[], product: IProduct): IBasketProduct[];
 }
 
 export function createBasketFactory(): IBasketFactory {
@@ -10,10 +11,6 @@ export function createBasketFactory(): IBasketFactory {
     product: IProduct
   ): IBasketProduct[] {
     const isAlreadyInBasket = checkIsProductExistInBasket(products, product);
-
-    const productToUse = isAlreadyInBasket
-      ? getProductInBasket(products, product)
-      : product;
 
     return isAlreadyInBasket
       ? updateProductQtd(products, product)
@@ -25,6 +22,12 @@ export function createBasketFactory(): IBasketFactory {
           },
         ];
   }
+  function removeItem(
+    products: IBasketProduct[],
+    productToRemove: IProduct
+  ): IBasketProduct[] {
+    return products.filter(product => product.title !== productToRemove.title);
+  }
 
   function checkIsProductExistInBasket(
     products: IBasketProduct[],
@@ -32,17 +35,6 @@ export function createBasketFactory(): IBasketFactory {
   ): boolean {
     const termToSearch = product.title;
     return products.some(product => product.title === termToSearch);
-  }
-
-  function getProductInBasket(
-    products: IBasketProduct[],
-    product: IProduct
-  ): IBasketProduct {
-    const termToSearch = product.title;
-    const productOnBasket = products.find(
-      product => product.title === termToSearch
-    );
-    return productOnBasket ? productOnBasket : ({} as IBasketProduct);
   }
 
   function updateProductQtd(
@@ -60,5 +52,6 @@ export function createBasketFactory(): IBasketFactory {
 
   return {
     addItem,
+    removeItem,
   };
 }

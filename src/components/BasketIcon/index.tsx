@@ -15,10 +15,29 @@ export const BasketIcon = (props: IBasketIcon) => {
     navigation.navigate('Basket');
   }
 
+  function defineTotal(): number {
+    return basket.reduce((acc, curr) => {
+      const productQtd = curr.qtd;
+      const productPrice = curr.price;
+      const productTotal = productPrice * productQtd;
+      acc += productTotal;
+      return acc;
+    }, 0);
+  }
+
+  function defineCount(): number {
+    return basket.reduce((acc, curr) => {
+      const productQtd = curr.qtd;
+      acc += productQtd;
+      return acc;
+    }, 0);
+  }
+
   const layoutProps = {
     ...props,
     goToBasket,
-    count: basket.length,
+    total: defineTotal(),
+    count: defineCount(),
   };
 
   return <Layout {...layoutProps} />;

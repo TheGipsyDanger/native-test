@@ -23,7 +23,7 @@ function defineRoutesProps(name: string) {
       headerShown: true,
       title: viewNames[name],
       headerBackTitleVisible: false,
-      headerRight: () => name === 'Home' && <BasketIcon />,
+      headerRight: () => <BasketIcon route={name} />,
     },
     component: allViews[name],
   };
