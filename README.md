@@ -1,3 +1,5 @@
+![ton](https://user-images.githubusercontent.com/22872282/147475036-d92c3b34-2742-4e52-a03b-9491110a6ab0.png)
+
 <p align="center" >
   <p align="center" >
     <a href="">
@@ -40,10 +42,12 @@ You can starting a new project this way:
 
 run `yarn g` to see the options
 
-- `Function View`: • View, to create Views(Container's), with redux.
-- `Component`: • Components, for the creation of components.
-- `Flow`: • Flow, to create a new application flow, already as a standard view, with redux.
-- `Hooks`: To create a new hooks/context.
+- `Page`: • Create a new Function Page.
+- `Component`: • Create a new Component.
+- `Context`: • Create a new Context.
+- `Flow`: • Flow, to create a new application flow, already as a standard view.
+- `Factory`: • Create a new Factory.
+- `Interfaces`: • Create a new Interface.
 
 #### :exclamation: `The model will take care of creating and making all imports to leave what was created with global access.`
 
@@ -65,6 +69,10 @@ import { CustomButton, CustomBackground } from '../components'
 
 https://styled-components.com
 
+### Styled-system
+
+https://styled-system.com
+
 ### Navigator
 
 https://reacttraining.com/react-router/core/guides/quick-start
@@ -72,4 +80,4 @@ https://reacttraining.com/react-router/core/guides/quick-start
 
 ## You have a question?
 
-Please send email for the henriquebasshvf@gmail.com
+Please send email for the renan.henrique.fonte@gmail.com
