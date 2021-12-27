@@ -11,28 +11,30 @@ export const Home: React.FC<IHomeLayout> = ({
   openDetails,
   ...props
 }) => (
-  <Wrapped flex={1} bg="WHITE">
+  <Wrapped testID="Home" flex={1} bg="WHITE">
     <SubHeader />
     <Conditional render={listType === 'grid'}>
       <FlatList
+        testID="List"
         data={products}
         extraData={products}
         numColumns={2}
         showsVerticalScrollIndicator={false}
         keyExtractor={(_, index) => index.toString()}
         renderItem={({ item }) => (
-          <Wrapped onPress={() => openDetails(item)}>
+          <Wrapped testID="HomeItem" onPress={() => openDetails(item)}>
             <Item {...{ item, type: 'grid', ...props }} />
           </Wrapped>
         )}
       />
       <FlatList
+        testID="List"
         data={products}
         extraData={products}
         showsVerticalScrollIndicator={false}
         keyExtractor={(_, index) => index.toString()}
         renderItem={({ item }) => (
-          <Wrapped onPress={() => openDetails(item)}>
+          <Wrapped testID="HomeItem" onPress={() => openDetails(item)}>
             <Item {...{ item, type: 'list', ...props }} />
           </Wrapped>
         )}

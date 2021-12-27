@@ -11,7 +11,7 @@ export default {
     px: 2,
     py: 1,
     bg: 'white',
-    boxShadow: 'cell',
+    shadow: 'cell',
     flexDirection: 'row',
   })``,
   Title: styled(Text).attrs({

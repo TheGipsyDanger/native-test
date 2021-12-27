@@ -8,7 +8,7 @@ export default {
   Card: styled(Wrapped).attrs({
     flex: 1,
     bg: 'white',
-    boxShadow: 'cell',
+    shadow: 'cell',
   })``,
   Title: styled(Text).attrs({
     size: 'tiny',

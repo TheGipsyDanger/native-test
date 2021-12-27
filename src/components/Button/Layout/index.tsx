@@ -12,6 +12,10 @@ export const Button = ({
   ...props
 }: IButtonLayout) => (
   <Wrapped {...props} borderRadius="Circle" center testID={`Button`}>
-    <Text {...{ font, size: fontSize, color: textColor }}>{title}</Text>
+    <Text
+      {...{ font, size: fontSize, color: textColor }}
+      testID={`ButtonTitle`}>
+      {title}
+    </Text>
   </Wrapped>
 );

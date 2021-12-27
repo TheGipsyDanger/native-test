@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { useQuery } from 'react-query';
 import { useNavigation } from '@react-navigation/native';
 import escapeRegExp from 'escape-string-regexp';
 
-import { IProduct, getProducts } from '~/utils';
+import { IProduct, useFetchProducts } from '~/utils';
 import { useList, useItem, useBasket } from '~/context';
 
 import { IHome } from './data';
@@ -16,7 +15,7 @@ export const Home: React.FC<IHome> = props => {
   const { addItem } = useBasket();
   const { setSelected } = useItem();
 
-  const { data: products } = useQuery<IProduct[]>('getProducts', getProducts);
+  const { data: products } = useFetchProducts();
 
   function productsSearch() {
     if (products === undefined) return [];

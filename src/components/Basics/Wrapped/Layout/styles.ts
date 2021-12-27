@@ -22,17 +22,37 @@ export default {
     ${boxShadow};
     ${backgroundColor};
 
-    ${({ boxShadow: shadow }) =>
+    ${({ shadow }) =>
       shadow &&
       css`
         box-shadow: ${theme.shadows[shadow as string]};
-        elevation: 5;
+        elevation: 3;
       `}
 
     ${({ borderRadius }) =>
       borderRadius &&
       css`
         border-radius: ${theme.radii[borderRadius as string] || 'Light'}px;
+      `}
+
+      ${({ bg }) =>
+      bg &&
+      css`
+        background-color: ${theme.colors[bg as string] || 'white'};
+      `}
+
+
+    ${({ borderColor }) =>
+      borderColor &&
+      css`
+        border-color: ${theme.colors[borderColor as string]};
+      `}
+
+
+    ${({ borderRadius }) =>
+      borderRadius &&
+      css`
+        border-radius: ${theme.radii[borderRadius as string]}px;
       `}
 
     ${({ center }) =>

@@ -12,9 +12,9 @@ export const Details = (props: IDetailsLayout) => {
     <C.Container testID={`Details`}>
       <Image flex={1} uri={image} />
       <C.Infos flex={1} px={2}>
-        <C.Title>{title}</C.Title>
-        <C.Description>{description}</C.Description>
-        <C.Price>
+        <C.Title testID="DetailsTitle">{title}</C.Title>
+        <C.Description testID="DetailsDescription">{description}</C.Description>
+        <C.Price testID="DetailsPrice">
           {price.toLocaleString('pt-BR', {
             style: 'currency',
             currency: 'BRL',

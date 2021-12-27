@@ -11,15 +11,23 @@ export const Item = (props: IBasketItem) => {
   const { item, removeItem } = props;
   const { image, title, qtd, price } = item;
   return (
-    <Wrapped testID={`Basket`} height={metrics.windownWidth / 3} my={1} mx={1}>
+    <Wrapped
+      testID={`BasketItem`}
+      height={metrics.windownWidth / 3}
+      my={1}
+      mx={1}>
       <C.Card>
         <Image flex={1} uri={image} />
         <C.Infos>
           <Wrapped mb={0}>
-            <C.Title mb={0}>{title}</C.Title>
+            <C.Title testID="BasketItemTitle" mb={0}>
+              {title}
+            </C.Title>
             <C.InfosRow>
-              <C.InfosText>{`Qtd: ${qtd}`}</C.InfosText>
-              <C.InfosText>{BRLMoney(price * qtd)}</C.InfosText>
+              <C.InfosText testID="BasketItemQtd">{`Qtd: ${qtd}`}</C.InfosText>
+              <C.InfosText testID="BasketItemPrice">
+                {BRLMoney(price * qtd)}
+              </C.InfosText>
             </C.InfosRow>
           </Wrapped>
           <Button

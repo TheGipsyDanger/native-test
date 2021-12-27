@@ -1,5 +1,6 @@
 import { API } from './API';
-import { IProduct } from '~/utils';
+import { useQuery } from 'react-query';
+import { IProduct, mockProducts } from '~/utils';
 
 export const getProducts = async (): Promise<any> => {
   try {
@@ -8,4 +9,10 @@ export const getProducts = async (): Promise<any> => {
   } catch (error) {
     console.log('Error on getProducts');
   }
+};
+
+export const useFetchProducts = () => {
+  return useQuery<IProduct[]>('getProducts', getProducts, {
+    initialData: mockProducts,
+  });
 };
